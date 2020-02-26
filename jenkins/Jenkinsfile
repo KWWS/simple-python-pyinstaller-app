@@ -26,14 +26,11 @@ pipeline {
         }
       } 
     }
-      agent {
-        dockerfile {
-            args '--entrypoint=\'\''
-        }
     }
       stage('Deliver'){
         agent {
           docker{
+            args '--entrypoint=\'\''
             image 'cdrx/pyinstaller-linux:python2'
           }
         }  
