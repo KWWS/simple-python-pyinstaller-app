@@ -26,6 +26,11 @@ pipeline {
         }
       } 
     }
+      agent {
+        dockerfile {
+            args '--entrypoint=\'\''
+        }
+    }
       stage('Deliver'){
         agent {
           docker{
